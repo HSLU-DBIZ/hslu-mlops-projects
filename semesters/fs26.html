@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FS26 Projects — MLOps — HSLU</title>
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div id="header"></div>
+
+    <div class="section">
+        <div class="container">
+            <div class="page-header">
+                <p class="eyebrow">Frühlingssemester 2026</p>
+                <h1 class="page-title">Student Projects</h1>
+                <p class="page-subtitle">MLOps — Hochschule Luzern</p>
+            </div>
+
+            <div class="project-grid">
+
+                <!-- ============================================================
+                     PROJECT CARD TEMPLATE — Copy this block for each student.
+                     Fill in: image src, title, author, summary, and GitHub link.
+                     ============================================================ -->
+                <div class="project-card">
+                    <img class="card-image" src="../images/projects/fs26/example1.png" alt="Project screenshot">
+                    <div class="card-body">
+                        <h2 class="card-title">The Energy Saver</h2>
+                        <p class="card-author">Max Mustermann</p>
+                        <p class="card-summary">
+                            Predicts electricity prices for the next 24 hours using public
+                            energy grid APIs, helping users decide when to charge their EV.
+                            Uses an LSTM model retrained daily via GitHub Actions.
+                        </p>
+                        <a class="card-link" href="https://github.com/student/energy-saver" target="_blank" rel="noopener">
+                            GitHub →
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img class="card-image" src="../images/projects/fs26/example2.png" alt="Project screenshot">
+                    <div class="card-body">
+                        <h2 class="card-title">The Stockholm Syndrome</h2>
+                        <p class="card-author">Anna Beispiel</p>
+                        <p class="card-summary">
+                            Predicts delays on the Swiss SBB network using open data APIs.
+                            Features are computed hourly and stored in Hopsworks.
+                            A Streamlit dashboard shows real-time delay predictions.
+                        </p>
+                        <a class="card-link" href="https://github.com/student/sbb-delays" target="_blank" rel="noopener">
+                            GitHub →
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img class="card-image" src="../images/projects/fs26/example3.png" alt="Project screenshot">
+                    <div class="card-body">
+                        <h2 class="card-title">The Farmer</h2>
+                        <p class="card-author">Lena Muster</p>
+                        <p class="card-summary">
+                            Predicts soil moisture using open weather APIs and historical
+                            sensor data. An automated Airflow pipeline retrains a
+                            gradient boosting model weekly. Deployed on HuggingFace Spaces.
+                        </p>
+                        <a class="card-link" href="https://github.com/student/soil-moisture" target="_blank" rel="noopener">
+                            GitHub →
+                        </a>
+                    </div>
+                </div>
+                <!-- ============================================================
+                     END OF EXAMPLE CARDS — Delete the examples above and replace
+                     with real student projects. Copy the template below:
+
+                     <div class="project-card">
+                         <img class="card-image" src="../images/projects/fs26/IMAGE.png" alt="Project screenshot">
+                         <div class="card-body">
+                             <h2 class="card-title">PROJECT TITLE</h2>
+                             <p class="card-author">STUDENT NAME</p>
+                             <p class="card-summary">
+                                 PROJECT SUMMARY (2-3 sentences)
+                             </p>
+                             <a class="card-link" href="GITHUB_URL" target="_blank" rel="noopener">
+                                 GitHub →
+                             </a>
+                         </div>
+                     </div>
+
+                     ============================================================ -->
+
+            </div>
+        </div>
+    </div>
+
+    <div id="footer"></div>
+    <script src="../js/main.js"></script>
+</body>
+</html>
