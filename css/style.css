@@ -250,9 +250,12 @@ h3 {
     color: var(--color-text-light);
     display: flex;
     align-items: center;
-    justify-content: center;
     flex-wrap: wrap;
     gap: 0.4rem;
+}
+
+.hero .staff {
+    justify-content: center;
 }
 
 .staff a {
