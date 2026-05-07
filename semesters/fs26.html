@@ -27,76 +27,230 @@
 
             <div class="project-grid">
 
-                <!-- ============================================================
-                     PROJECT CARD TEMPLATE — Copy this block for each student.
-                     Fill in: image src, title, author, summary, and GitHub link.
-                     ============================================================ -->
                 <div class="project-card">
-                    <img class="card-image" src="../images/projects/fs26/example1.png" alt="Project screenshot">
+                    <img class="card-image" src="https://opengraph.github.com/repo/AIMLstud/swiss-company-predictor" alt="Project screenshot">
                     <div class="card-body">
-                        <h2 class="card-title">The Energy Saver</h2>
-                        <p class="card-author">Max Mustermann</p>
+                        <h2 class="card-title">Predicting Weekly Company Registrations in Switzerland</h2>
+                        <p class="card-author">Gabriel Bezhi</p>
                         <p class="card-summary">
-                            Predicts electricity prices for the next 24 hours using public
-                            energy grid APIs, helping users decide when to charge their EV.
-                            Uses an LSTM model retrained daily via GitHub Actions.
+                            Forecasts weekly new company registrations per canton using the live Zefix/Handelsregister API,
+                            with an incremental Airflow DAG storing date-partitioned Parquet on GCS.
                         </p>
-                        <a class="card-link" href="https://github.com/student/energy-saver" target="_blank" rel="noopener">
+                        <a class="card-link" href="https://github.com/AIMLstud/swiss-company-predictor" target="_blank" rel="noopener">
                             GitHub →
                         </a>
                     </div>
                 </div>
 
                 <div class="project-card">
-                    <img class="card-image" src="../images/projects/fs26/example2.png" alt="Project screenshot">
+                    <img class="card-image" src="https://opengraph.github.com/repo/marcoblum/MLOPS-Air-Quality-Project" alt="Project screenshot">
                     <div class="card-body">
-                        <h2 class="card-title">The Stockholm Syndrome</h2>
-                        <p class="card-author">Anna Beispiel</p>
+                        <h2 class="card-title">AeroPredict-Live — Real-Time Air Quality Forecaster (PM2.5, 24h horizon)</h2>
+                        <p class="card-author">Marco Blum</p>
                         <p class="card-summary">
-                            Predicts delays on the Swiss SBB network using open data APIs.
-                            Features are computed hourly and stored in Hopsworks.
-                            A Streamlit dashboard shows real-time delay predictions.
+                            Predicts PM2.5 air quality 24 hours ahead using OpenAQ sensor readings and Open-Meteo weather data,
+                            with lag/rolling features and a Streamlit dashboard on HuggingFace Spaces.
                         </p>
-                        <a class="card-link" href="https://github.com/student/sbb-delays" target="_blank" rel="noopener">
+                        <a class="card-link" href="https://github.com/marcoblum/MLOPS-Air-Quality-Project" target="_blank" rel="noopener">
                             GitHub →
                         </a>
                     </div>
                 </div>
 
                 <div class="project-card">
-                    <img class="card-image" src="../images/projects/fs26/example3.png" alt="Project screenshot">
+                    <img class="card-image" src="https://opengraph.github.com/repo/KimBor04/golf-oracle" alt="Project screenshot">
                     <div class="card-body">
-                        <h2 class="card-title">The Farmer</h2>
-                        <p class="card-author">Lena Muster</p>
+                        <h2 class="card-title">Golf Oracle — Round-by-Round PGA Tour Leaderboard Prediction</h2>
+                        <p class="card-author">Kim Bortis</p>
                         <p class="card-summary">
-                            Predicts soil moisture using open weather APIs and historical
-                            sensor data. An automated Airflow pipeline retrains a
-                            gradient boosting model weekly. Deployed on HuggingFace Spaces.
+                            Predicts round-by-round PGA Tour scores using Kaggle historical data and live FreeWebAPI Golf +
+                            Open-Meteo weather, with explicit leakage prevention via one-step-shifted rolling features.
                         </p>
-                        <a class="card-link" href="https://github.com/student/soil-moisture" target="_blank" rel="noopener">
+                        <a class="card-link" href="https://github.com/KimBor04/golf-oracle" target="_blank" rel="noopener">
                             GitHub →
                         </a>
                     </div>
                 </div>
-                <!-- ============================================================
-                     END OF EXAMPLE CARDS — Delete the examples above and replace
-                     with real student projects. Copy the template below:
 
-                     <div class="project-card">
-                         <img class="card-image" src="../images/projects/fs26/IMAGE.png" alt="Project screenshot">
-                         <div class="card-body">
-                             <h2 class="card-title">PROJECT TITLE</h2>
-                             <p class="card-author">STUDENT NAME</p>
-                             <p class="card-summary">
-                                 PROJECT SUMMARY (2-3 sentences)
-                             </p>
-                             <a class="card-link" href="GITHUB_URL" target="_blank" rel="noopener">
-                                 GitHub →
-                             </a>
-                         </div>
-                     </div>
+                <div class="project-card">
+                    <img class="card-image" src="https://opengraph.github.com/repo/maraeckart/I.BA_MLOPS" alt="Project screenshot">
+                    <div class="card-body">
+                        <h2 class="card-title">Live European News Monitoring System — Headline Topic Classification</h2>
+                        <p class="card-author">Mara Eckart</p>
+                        <p class="card-summary">
+                            Classifies Euronews and The Guardian RSS headlines into topic categories (Politics, Economy, etc.)
+                            and surfaces trends on an analytics dashboard built with Streamlit and FastAPI.
+                        </p>
+                        <a class="card-link" href="https://github.com/maraeckart/I.BA_MLOPS" target="_blank" rel="noopener">
+                            GitHub →
+                        </a>
+                    </div>
+                </div>
 
-                     ============================================================ -->
+                <div class="project-card">
+                    <img class="card-image" src="https://opengraph.github.com/repo/n-felber/MLOPS" alt="Project screenshot">
+                    <div class="card-body">
+                        <h2 class="card-title">Live ML System Predicting Men's Outdoor High Jump Results</h2>
+                        <p class="card-author">Noé Felber</p>
+                        <p class="card-summary">
+                            Predicts each athlete's next best cleared height in men's outdoor high jump using scraped
+                            World Athletics results and Open-Meteo weather, with athlete-centric rolling and trend features.
+                        </p>
+                        <a class="card-link" href="https://github.com/n-felber/MLOPS" target="_blank" rel="noopener">
+                            GitHub →
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img class="card-image" src="https://opengraph.github.com/repo/jaybrandon/solar-flux-ml-pipeline" alt="Project screenshot">
+                    <div class="card-body">
+                        <h2 class="card-title">Solar Flare Early Warning System — 24h Max X-Ray Flux Forecast</h2>
+                        <p class="card-author">Jay Hawkes</p>
+                        <p class="card-summary">
+                            Forecasts maximum X-ray flux over the next 24 hours and classifies M-class solar flare events
+                            using live NOAA SWPC data, with domain-aware features including flux derivatives and threshold-crossing counts.
+                        </p>
+                        <a class="card-link" href="https://github.com/jaybrandon/solar-flux-ml-pipeline" target="_blank" rel="noopener">
+                            GitHub →
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img class="card-image" src="https://opengraph.github.com/repo/CorsinAI/JobAnalysis" alt="Project screenshot">
+                    <div class="card-body">
+                        <h2 class="card-title">Swiss Job Market Demand Forecasting (Next-3-Days New Postings)</h2>
+                        <p class="card-author">Corsin Hidber</p>
+                        <p class="card-summary">
+                            Forecasts new Swiss job postings per role × location over a 3-day horizon, using a UIPath scraper
+                            and OpenAI API for structuring, feeding a Hopsworks feature store with LightGBM models.
+                        </p>
+                        <a class="card-link" href="https://github.com/CorsinAI/JobAnalysis" target="_blank" rel="noopener">
+                            GitHub →
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img class="card-image" src="https://opengraph.github.com/repo/javihslu/foehncast" alt="Project screenshot">
+                    <div class="card-body">
+                        <h2 class="card-title">FöhnCast — Personalised Kiteboarding Forecast for Central Switzerland</h2>
+                        <p class="card-author">Javier Izquierdo</p>
+                        <p class="card-summary">
+                            Predicts a personalised 0–5 kiteboarding quality index per spot using föhn-wind conditions
+                            (Open-Meteo + MeteoSwiss), rider profile (weight, kite quiver), and OSRM drive-time routing.
+                        </p>
+                        <a class="card-link" href="https://github.com/javihslu/foehncast" target="_blank" rel="noopener">
+                            GitHub →
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img class="card-image" src="https://opengraph.github.com/repo/jackra1n/hevy-fti-predictor" alt="Project screenshot">
+                    <div class="card-body">
+                        <h2 class="card-title">Hevy FTI Predictor — Per-Exercise Workout Volume Prediction</h2>
+                        <p class="card-author">Jacek Lajdecki</p>
+                        <p class="card-summary">
+                            Predicts per-exercise total training volume for the next workout session from personal Hevy app logs,
+                            using rolling volume, rest-day, and progression features.
+                        </p>
+                        <a class="card-link" href="https://github.com/jackra1n/hevy-fti-predictor" target="_blank" rel="noopener">
+                            GitHub →
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img class="card-image" src="https://opengraph.github.com/repo/iaryser/I.BA_MLOPS_MM.PROJECT" alt="Project screenshot">
+                    <div class="card-body">
+                        <h2 class="card-title">Cryptocurrency Price Direction Prediction (Binary, Fixed Horizon)</h2>
+                        <p class="card-author">Timo Ryser</p>
+                        <p class="card-summary">
+                            Predicts binary cryptocurrency price direction over a fixed horizon using price-derived technical
+                            features (returns, moving averages, volatility, momentum) from CoinGecko.
+                        </p>
+                        <a class="card-link" href="https://github.com/iaryser/I.BA_MLOPS_MM.PROJECT" target="_blank" rel="noopener">
+                            GitHub →
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img class="card-image" src="https://opengraph.github.com/repo/realking46/Real-Time-News-Credibility-Scoring-System" alt="Project screenshot">
+                    <div class="card-body">
+                        <h2 class="card-title">Real-Time News Credibility Scoring System (Score 0–100 + Risk Label)</h2>
+                        <p class="card-author">Nishant Singh</p>
+                        <p class="card-summary">
+                            Scores live news articles 0–100 for credibility and assigns a Low/Medium/High risk label using
+                            BERT embeddings over NewsAPI + RSS feeds, trained on LIAR and FakeNewsNet datasets.
+                        </p>
+                        <a class="card-link" href="https://github.com/realking46/Real-Time-News-Credibility-Scoring-System" target="_blank" rel="noopener">
+                            GitHub →
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img class="card-image" src="https://opengraph.github.com/repo/AlinaSydoruk/MLO-asteroid-hazard-predictor" alt="Project screenshot">
+                    <div class="card-body">
+                        <h2 class="card-title">NASA Near-Earth Asteroid Hazard Predictor (Binary PHA Classification)</h2>
+                        <p class="card-author">Alina Sydoruk</p>
+                        <p class="card-summary">
+                            Classifies near-Earth asteroids as potentially hazardous using daily NASA NeoWs API ingestion,
+                            XGBoost, and a Hopsworks feature store with DagsHub MLflow tracking.
+                        </p>
+                        <a class="card-link" href="https://github.com/AlinaSydoruk/MLO-asteroid-hazard-predictor" target="_blank" rel="noopener">
+                            GitHub →
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img class="card-image" src="https://opengraph.github.com/repo/marcow03/gizstrom" alt="Project screenshot">
+                    <div class="card-body">
+                        <h2 class="card-title">gizstrom — Rooftop Solar PV Generation Forecasting</h2>
+                        <p class="card-author">Marco Weishaupt</p>
+                        <p class="card-summary">
+                            Forecasts daily solar PV energy output (kWh) for a personal rooftop installation using Open-Meteo
+                            weather forecasts and Fronius inverter data, served via FastAPI on Google Cloud Run.
+                        </p>
+                        <a class="card-link" href="https://github.com/marcow03/gizstrom" target="_blank" rel="noopener">
+                            GitHub →
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img class="card-image" src="https://opengraph.github.com/repo/NoahZemljic/ahead-of-the-curve" alt="Project screenshot">
+                    <div class="card-body">
+                        <h2 class="card-title">Ahead of the Curve — 30-Day HuggingFace Model Download Growth Prediction</h2>
+                        <p class="card-author">Noah Zemljic</p>
+                        <p class="card-summary">
+                            Predicts 30-day download growth and top-quartile adoption for newly uploaded HuggingFace models
+                            using the Hub API, with a 90-day backfill to bootstrap training labels and sentence-transformer topic filtering.
+                        </p>
+                        <a class="card-link" href="https://github.com/NoahZemljic/ahead-of-the-curve" target="_blank" rel="noopener">
+                            GitHub →
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img class="card-image" src="https://opengraph.github.com/repo/domi-zc/MLOPS" alt="Project screenshot">
+                    <div class="card-body">
+                        <h2 class="card-title">Bitcoin On-Chain Predictor — 24h BTC Price Direction from On-Chain Metrics</h2>
+                        <p class="card-author">Dominic Zybach</p>
+                        <p class="card-summary">
+                            Predicts 24-hour Bitcoin price direction using on-chain metrics (active addresses, transaction volume
+                            from Blockchain.com) as the primary signal, with Airflow orchestration and AWS S3 feature store.
+                        </p>
+                        <a class="card-link" href="https://github.com/domi-zc/MLOPS" target="_blank" rel="noopener">
+                            GitHub →
+                        </a>
+                    </div>
+                </div>
 
             </div>
         </div>
