@@ -25,6 +25,23 @@
                 </div>
             </div>
 
+            <div class="projects-toolbar">
+                <label class="search-box">
+                    <span class="sr-only">Search projects</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                    <input type="search" id="project-search" placeholder="Search projects, students, topics…" autocomplete="off">
+                </label>
+                <p class="project-count" id="project-count" aria-live="polite">Showing <strong>15</strong> of 15</p>
+            </div>
+
+            <div class="empty-state" id="project-empty">
+                <h3>No matching projects</h3>
+                <p>Try a different keyword or clear the search.</p>
+            </div>
+
             <div class="project-grid">
 
                 <div class="project-card">
@@ -75,11 +92,11 @@
                 <div class="project-card">
                     <img class="card-image" src="https://opengraph.github.com/repo/maraeckart/I.BA_MLOPS" alt="Project screenshot">
                     <div class="card-body">
-                        <h2 class="card-title">Live European News Monitoring System — Headline Topic Classification</h2>
+                        <h2 class="card-title">News Topic Modeling Pipeline — Tracking Shifts in News Attention</h2>
                         <p class="card-author">Mara Eckart</p>
                         <p class="card-summary">
-                            Classifies Euronews and The Guardian RSS headlines into topic categories (Politics, Economy, etc.)
-                            and surfaces trends on an analytics dashboard built with Streamlit and FastAPI.
+                            Trains an NMF topic model over articles from configurable European news sources and visualizes how
+                            topic focus shifts over time, with a daily Airflow pipeline, GCS artifact store, and FastAPI + Streamlit dashboard.
                         </p>
                         <a class="card-link" href="https://github.com/maraeckart/I.BA_MLOPS" target="_blank" rel="noopener">
                             GitHub →
