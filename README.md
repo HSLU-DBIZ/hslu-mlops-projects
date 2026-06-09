@@ -16,11 +16,13 @@ Hosted via GitHub Pages.
 ├── css/
 │   └── style.css
 ├── js/
-│   └── main.js             # Loads header/footer into pages
+│   └── main.js             # Loads header/footer, image fallback chain
+├── tools/
+│   └── fetch-arch-images.js # Collects repo architecture diagrams (see below)
 └── images/
     ├── hslu-logo.svg
     ├── favicon.ico
-    └── projects/           # Student project images
+    └── projects/           # Student project images (incl. collected diagrams)
         └── fs26/
 ```
 
@@ -59,6 +61,49 @@ Copy this block into the semester HTML file inside the `<div class="project-grid
     </div>
 </div>
 ```
+
+## Collecting Architecture Diagrams
+
+Many student repos include an architecture diagram in their README/`docs/`.
+`tools/fetch-arch-images.js` collects these and wires them into the cards.
+
+```bash
+# preview picks without downloading or editing anything
+node tools/fetch-arch-images.js --dry-run
+
+# download diagrams into images/projects/fs26/ and rewrite the cards
+GITHUB_TOKEN="$(gh auth token)" node tools/fetch-arch-images.js
+```
+
+For each repo linked from `semesters/fs26.html`, the script scans the README,
+scores image candidates (heading/alt/filename signals, badges excluded), and
+downloads the best match to `images/projects/fs26/{owner}-{repo}.{ext}`. The
+card's `<img>` is rewritten so its `src` points at the local diagram and a
+`data-fallback-src` attribute holds the GitHub OpenGraph URL. Cards with no
+detected diagram keep the OpenGraph URL as their `src`.
+
+### Diagrams the README scan can't find
+
+Some diagrams live outside the root README — in `docs/`, an `ARCHITECTURE.md`,
+a GitHub user-attachment, or a Mermaid block. For those, **drop the image in by
+hand** and re-run: the script honors any file already at
+`images/projects/fs26/{owner}-{repo}.{ext}` (the *local override*) and wires the
+card to it instead of reverting to the OpenGraph thumbnail. Naming must match
+the repo's `owner` and `name` exactly. To render a Mermaid diagram to PNG, paste
+the source into <https://mermaid.ink> or use `@mermaid-js/mermaid-cli`.
+
+Large images can be downscaled for the web (the lightbox needs no more than
+~1800px wide), e.g. `sips --resampleWidth 1800 images/projects/fs26/*.png`.
+
+This gives each card a three-tier image fallback (handled in `js/main.js`):
+
+1. **Architecture diagram** (local file), else
+2. **GitHub OpenGraph** thumbnail (`data-fallback-src`), else
+3. **HSLU logo** (`is-fallback` styling).
+
+The script is re-runnable/idempotent — review the report and `git diff`, then
+commit. `GITHUB_TOKEN` is optional (raises the API rate limit; `gh auth token`
+works if the GitHub CLI is logged in). It never deletes downloaded files.
 
 ## Local Development
 

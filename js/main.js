@@ -108,15 +108,74 @@ document.addEventListener("DOMContentLoaded", function () {
         setCount(total);
     }
 
-    // Swap broken GitHub OpenGraph thumbnails for a branded placeholder
+    // Image fallback chain: architecture diagram -> GitHub OpenGraph -> HSLU logo.
+    // The diagram (when present) is the initial src; data-fallback-src holds the
+    // OpenGraph URL. is-fallback (contain + gradient) is logo-only — diagram and
+    // OpenGraph thumbnails keep the 16:9 cover styling.
     function initImageFallbacks() {
+        var logoSrc = base + "images/hslu-logo.svg";
+
         document.querySelectorAll("img.card-image").forEach(function (img) {
-            img.addEventListener("error", function handle() {
-                img.removeEventListener("error", handle);
-                img.classList.add("is-fallback");
-                img.src = base + "images/hslu-logo.svg";
-                img.alt = "HSLU project";
-            });
+            var chain = [];
+            var og = img.getAttribute("data-fallback-src");
+            if (og) chain.push({ src: og });               // tier 2: OpenGraph
+            chain.push({ src: logoSrc, isLogo: true });    // final tier: logo
+
+            var i = 0;
+            function handleError() {
+                img.removeEventListener("error", handleError);
+                if (i >= chain.length) return;
+                var step = chain[i++];
+                // Diagram failed: it's no longer a diagram, so drop the zoom
+                // treatment (reverts to a cropped thumbnail, badge hidden).
+                var media = img.closest(".card-media");
+                if (media) media.classList.remove("is-zoomable");
+                if (step.isLogo) {
+                    img.classList.add("is-fallback");
+                    img.alt = "HSLU project";
+                }
+                // Re-arm only when a further fallback remains after this one.
+                if (i < chain.length) img.addEventListener("error", handleError);
+                img.src = step.src;
+            }
+
+            img.addEventListener("error", handleError);
+        });
+    }
+
+    // Click a diagram to view it full-screen. One shared lightbox overlay;
+    // only .card-media.is-zoomable diagrams open it (delegated so it keeps
+    // working even after a card reverts to a thumbnail).
+    function initDiagramLightbox() {
+        var grid = document.querySelector(".project-grid");
+        if (!grid) return;
+
+        var lightbox = document.createElement("div");
+        lightbox.className = "diagram-lightbox";
+        lightbox.innerHTML =
+            '<span class="lightbox-close" aria-hidden="true">✕</span>' +
+            '<img alt="Architecture diagram">';
+        document.body.appendChild(lightbox);
+        var lightboxImg = lightbox.querySelector("img");
+
+        function open(src) {
+            lightboxImg.src = src;
+            lightbox.classList.add("is-open");
+        }
+        function close() {
+            lightbox.classList.remove("is-open");
+            lightboxImg.removeAttribute("src");
+        }
+
+        grid.addEventListener("click", function (e) {
+            var media = e.target.closest(".card-media.is-zoomable");
+            if (!media) return;
+            var img = media.querySelector("img.card-image");
+            if (img) open(img.currentSrc || img.src);
+        });
+        lightbox.addEventListener("click", close);
+        document.addEventListener("keydown", function (e) {
+            if (e.key === "Escape") close();
         });
     }
 
@@ -124,6 +183,7 @@ document.addEventListener("DOMContentLoaded", function () {
     loadComponent("footer", "footer.html");
 
     initImageFallbacks();
+    initDiagramLightbox();
     initProjectSearch();
     initScrollReveal();
 });
