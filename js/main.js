@@ -114,7 +114,7 @@ document.addEventListener("DOMContentLoaded", function () {
             img.addEventListener("error", function handle() {
                 img.removeEventListener("error", handle);
                 img.classList.add("is-fallback");
-                img.src = base + "images/hslu-logo-short.svg";
+                img.src = base + "images/hslu-logo.svg";
                 img.alt = "HSLU project";
             });
         });
