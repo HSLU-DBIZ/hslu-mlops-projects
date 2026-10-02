@@ -9,7 +9,8 @@ Hosted via GitHub Pages.
 ```
 ├── index.html              # Landing page (course info + semester links)
 ├── semesters/              # One HTML file per semester
-│   └── fs26.html           # Frühlingssemester 2026
+│   ├── fs26.html           # Frühlingssemester 2026
+│   └── hs26.html           # Herbstsemester 2026
 ├── components/             # Shared HTML fragments (loaded via JS)
 │   ├── header.html
 │   └── footer.html
@@ -23,7 +24,8 @@ Hosted via GitHub Pages.
     ├── hslu-logo.svg
     ├── favicon.ico
     └── projects/           # Student project images (incl. collected diagrams)
-        └── fs26/
+        ├── fs26/
+        └── hs26/
 ```
 
 ## Adding a New Semester
@@ -69,13 +71,13 @@ Many student repos include an architecture diagram in their README/`docs/`.
 
 ```bash
 # preview picks without downloading or editing anything
-node tools/fetch-arch-images.js --dry-run
+node tools/fetch-arch-images.js --semester hs26 --dry-run
 
-# download diagrams into images/projects/fs26/ and rewrite the cards
-GITHUB_TOKEN="$(gh auth token)" node tools/fetch-arch-images.js
+# download diagrams into images/projects/hs26/ and rewrite the cards
+GITHUB_TOKEN="$(gh auth token)" node tools/fetch-arch-images.js --semester hs26
 ```
 
-For each repo linked from `semesters/fs26.html`, the script scans the README,
+For each repo linked from `semesters/<semester>.html` (`--semester`, default `fs26`), the script scans the README,
 scores image candidates (heading/alt/filename signals, badges excluded), and
 downloads the best match to `images/projects/fs26/{owner}-{repo}.{ext}`. The
 card's `<img>` is rewritten so its `src` points at the local diagram and a

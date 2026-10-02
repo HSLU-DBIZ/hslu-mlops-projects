@@ -1,18 +1,18 @@
 #!/usr/bin/env node
 /*
- * fetch-arch-images.js — collect architecture diagrams for FS26 project cards.
+ * fetch-arch-images.js — collect architecture diagrams for a semester's project cards.
  *
- * For each repo linked from semesters/fs26.html, scans the README for an
+ * For each repo linked from semesters/{semester}.html, scans the README for an
  * architecture diagram image, downloads the best match into
- * images/projects/fs26/{owner}-{repo}.{ext}, and rewrites the card <img> to
+ * images/projects/{semester}/{owner}-{repo}.{ext}, and rewrites the card <img> to
  *   src               = local diagram path
  *   data-fallback-src = GitHub OpenGraph URL
  * When no diagram is found the card is left on the OpenGraph URL (no
  * data-fallback-src), so the runtime fallback chain stays diagram → OG → logo.
  *
  * Usage:
- *   node tools/fetch-arch-images.js [--dry-run]
- *   GITHUB_TOKEN=ghp_… node tools/fetch-arch-images.js   (avoids rate limits)
+ *   node tools/fetch-arch-images.js [--semester hs26] [--dry-run]   (default: fs26)
+ *   GITHUB_TOKEN=ghp_… node tools/fetch-arch-images.js --semester hs26   (avoids rate limits)
  *
  * Zero dependencies. Requires Node 18+ (global fetch). Re-runnable / idempotent.
  */
@@ -23,8 +23,10 @@ const fs = require("fs");
 const path = require("path");
 
 const ROOT = path.resolve(__dirname, "..");
-const HTML_PATH = path.join(ROOT, "semesters", "fs26.html");
-const IMG_DIR = path.join(ROOT, "images", "projects", "fs26");
+const semArg = process.argv.indexOf("--semester");
+const SEMESTER = semArg !== -1 ? process.argv[semArg + 1] : "fs26";
+const HTML_PATH = path.join(ROOT, "semesters", `${SEMESTER}.html`);
+const IMG_DIR = path.join(ROOT, "images", "projects", SEMESTER);
 
 const DRY_RUN = process.argv.includes("--dry-run");
 const TOKEN = process.env.GITHUB_TOKEN || "";
@@ -176,7 +178,7 @@ async function download(url, owner, repo) {
     return { ok: true, file };
 }
 
-// Manual override: an image already collected at images/projects/fs26/{owner}-{repo}.*
+// Manual override: an image already collected at images/projects/{semester}/{owner}-{repo}.*
 // is honored even when the README scan finds nothing. Some diagrams live outside the
 // root README (docs/, ARCHITECTURE.md, mermaid renders, GitHub user-attachments) and
 // are dropped in by hand; this keeps them across reruns instead of reverting to OG.
@@ -200,7 +202,7 @@ function ogUrl(owner, repo) {
     return `https://opengraph.githubassets.com/1/${owner}/${repo}`;
 }
 
-const IND = "                    "; // matches the card <img> indentation in fs26.html
+const IND = "                    "; // matches the card <img> indentation in the semester pages
 
 // A diagram card wraps the <img> in .card-media so a hover zoom badge can be
 // positioned and the runtime can toggle is-zoomable. Non-diagram cards stay a
@@ -208,7 +210,7 @@ const IND = "                    "; // matches the card <img> indentation in fs2
 // diagram"; js/main.js removes it if the diagram image fails to load.
 function buildMedia(owner, repo, file) {
     if (file) {
-        const local = `../images/projects/fs26/${file}`;
+        const local = `../images/projects/${SEMESTER}/${file}`;
         const og = ogUrl(owner, repo);
         return (
             `<div class="card-media is-zoomable">\n` +
@@ -298,7 +300,7 @@ async function processRepo(owner, repo) {
         rows.push(r);
         const tag = r.status === "ok" ? "ok " : r.status === "none" ? "-- " : "err";
         const detail = r.status === "ok"
-            ? `${r.picked}  score=${r.score}  -> images/projects/fs26/${r.file}`
+            ? `${r.picked}  score=${r.score}  -> images/projects/${SEMESTER}/${r.file}`
             : (r.note || "");
         console.log(`[${tag}] ${r.key.padEnd(46)} ${detail}`);
     }

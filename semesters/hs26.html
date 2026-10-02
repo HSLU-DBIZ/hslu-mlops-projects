@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HS26 Projects — MLOps — HSLU</title>
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div id="header"></div>
+
+    <div class="section">
+        <div class="container">
+            <div class="page-header">
+                <p class="eyebrow">Herbstsemester 2026</p>
+                <h1 class="page-title">Student Projects</h1>
+                <p class="page-subtitle">MLOps — Hochschule Luzern · projects in progress</p>
+                <div class="staff">
+                    <a href="https://www.linkedin.com/in/marc-bravin/" target="_blank" rel="noopener">Dr. Marc Bravin</a>
+                    <span class="staff-sep">·</span>
+                    <a href="https://www.linkedin.com/in/florianbaer/" target="_blank" rel="noopener">Florian Bär</a>
+                    <span class="staff-sep">·</span>
+                    <a href="https://www.linkedin.com/in/tobias-m%C3%A9rinat/" target="_blank" rel="noopener">Tobias Mérinat</a>
+                </div>
+            </div>
+
+            <div class="projects-toolbar">
+                <label class="search-box">
+                    <span class="sr-only">Search projects</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                    <input type="search" id="project-search" placeholder="Search projects, students, topics…" autocomplete="off">
+                </label>
+                <p class="project-count" id="project-count" aria-live="polite">Showing <strong>19</strong> of 19</p>
+            </div>
+
+            <div class="empty-state" id="project-empty">
+                <h3>No matching projects</h3>
+                <p>Try a different keyword or clear the search.</p>
+            </div>
+
+            <div class="project-grid">
+
+                <div class="project-card">
+                    <div class="card-media is-zoomable">
+                        <img class="card-image" src="../images/projects/hs26/nee-source-AareCast.png" data-fallback-src="https://opengraph.githubassets.com/1/nee-source/AareCast" alt="Project screenshot">
+                        <span class="card-zoom-badge" aria-hidden="true">⤢</span>
+                    </div>
+                    <div class="card-body">
+                        <h2 class="card-title">AareCast — 24-Hour Aare Water Temperature Forecast for Bern</h2>
+                        <p class="card-author">Elena Arganova</p>
+                        <p class="card-summary">
+                            Predicts the Aare water temperature at the Bern-Schönau gauge 24 hours ahead, re-
+                            issued every hour, so swimmers can plan tomorrow's swim. Combines live Aare.guru
+                            and BAFU gauge data, including the upstream Thun outflow, with issued MeteoSwiss
+                            forecasts.
+                        </p>
+                        <a class="card-link" href="https://github.com/nee-source/AareCast" target="_blank" rel="noopener">
+                            GitHub →
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="card-media is-zoomable">
+                        <img class="card-image" src="../images/projects/hs26/dominic-bieri-mlops.png" data-fallback-src="https://opengraph.githubassets.com/1/dominic-bieri/mlops" alt="Project screenshot">
+                        <span class="card-zoom-badge" aria-hidden="true">⤢</span>
+                    </div>
+                    <div class="card-body">
+                        <h2 class="card-title">S&P 500 Realized Volatility Forecast</h2>
+                        <p class="card-author">Dominic Bieri</p>
+                        <p class="card-summary">
+                            Forecasts the realized volatility of the S&P 500 (SPY) over the next five trading
+                            days, updated after every US market close. Benchmarked against trailing 20-day
+                            volatility and the VIX, for risk managers and long-term investors.
+                        </p>
+                        <a class="card-link" href="https://github.com/dominic-bieri/mlops" target="_blank" rel="noopener">
+                            GitHub →
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="card-media is-zoomable">
+                        <img class="card-image" src="../images/projects/hs26/Whalesharkking-mlops.png" data-fallback-src="https://opengraph.githubassets.com/1/Whalesharkking/mlops" alt="Project screenshot">
+                        <span class="card-zoom-badge" aria-hidden="true">⤢</span>
+                    </div>
+                    <div class="card-body">
+                        <h2 class="card-title">Regional Nectar-Flow Forecast — 10-Day Hive-Weight Prediction</h2>
+                        <p class="card-author">Elias Christen</p>
+                        <p class="card-summary">
+                            Predicts the daily weight gain or loss of monitored bee colonies in the Central-
+                            Swiss pre-Alps for the next ten days, refreshed every morning from hive-scale
+                            uploads and weather forecasts. Helps beekeepers time harvests, feeding and nectar
+                            gaps.
+                        </p>
+                        <a class="card-link" href="https://github.com/Whalesharkking/mlops" target="_blank" rel="noopener">
+                            GitHub →
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="card-media is-zoomable">
+                        <img class="card-image" src="../images/projects/hs26/theodorahaimoff-HSLU_HS26_MLOPS.png" data-fallback-src="https://opengraph.githubassets.com/1/theodorahaimoff/HSLU_HS26_MLOPS" alt="Project screenshot">
+                        <span class="card-zoom-badge" aria-hidden="true">⤢</span>
+                    </div>
+                    <div class="card-body">
+                        <h2 class="card-title">Swiss Segmented Unemployment Rate Predictor</h2>
+                        <p class="card-author">Theodora Haimoff</p>
+                        <p class="card-summary">
+                            Forecasts Switzerland's quarter-ahead ILO unemployment rate for the national total
+                            and 44 demographic segments by gender, nationality and age. All 45 series are
+                            predicted on every run and can be explored in a checkbox UI.
+                        </p>
+                        <a class="card-link" href="https://github.com/theodorahaimoff/HSLU_HS26_MLOPS" target="_blank" rel="noopener">
+                            GitHub →
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="card-media is-zoomable">
+                        <img class="card-image" src="../images/projects/hs26/CorsinAI-MLOPS-Project-HSLU-HS-26.png" data-fallback-src="https://opengraph.githubassets.com/1/CorsinAI/MLOPS-Project-HSLU-HS-26" alt="Project screenshot">
+                        <span class="card-zoom-badge" aria-hidden="true">⤢</span>
+                    </div>
+                    <div class="card-body">
+                        <h2 class="card-title">Negative Hours — Predicting Negative Power Prices</h2>
+                        <p class="card-author">Corsin Hidber</p>
+                        <p class="card-summary">
+                            Predicts at 10:00 on the day before which hours of tomorrow's German-Luxembourg
+                            day-ahead auction will clear below zero. Aimed at solar, wind and battery
+                            operators who must bid before the 12:00 gate closure.
+                        </p>
+                        <a class="card-link" href="https://github.com/CorsinAI/MLOPS-Project-HSLU-HS-26" target="_blank" rel="noopener">
+                            GitHub →
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="card-media is-zoomable">
+                        <img class="card-image" src="../images/projects/hs26/kianakiser-optcg-swiss-forecast.png" data-fallback-src="https://opengraph.githubassets.com/1/kianakiser/optcg-swiss-forecast" alt="Project screenshot">
+                        <span class="card-zoom-badge" aria-hidden="true">⤢</span>
+                    </div>
+                    <div class="card-body">
+                        <h2 class="card-title">One Piece Card Game Leader Matchup Predictor</h2>
+                        <p class="card-author">Kiana Kiser</p>
+                        <p class="card-summary">
+                            Estimates the probability that a player using one Leader beats a player using
+                            another, from Swiss-round results of Limitless tournaments. Shows recent win rates
+                            and match counts next to each prediction, evaluated with the Brier score.
+                        </p>
+                        <a class="card-link" href="https://github.com/kianakiser/optcg-swiss-forecast" target="_blank" rel="noopener">
+                            GitHub →
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="card-media is-zoomable">
+                        <img class="card-image" src="../images/projects/hs26/ialauper-pedestrian-flow.png" data-fallback-src="https://opengraph.githubassets.com/1/ialauper/pedestrian-flow" alt="Project screenshot">
+                        <span class="card-zoom-badge" aria-hidden="true">⤢</span>
+                    </div>
+                    <div class="card-body">
+                        <h2 class="card-title">Pedestrian Flow on Zurich's Bahnhofstrasse</h2>
+                        <p class="card-author">Boris Lauper</p>
+                        <p class="card-summary">
+                            Predicts hourly pedestrian counts on Bahnhofstrasse (Mitte) in Zurich from the
+                            city's open footfall sensors and MeteoSwiss weather data. Built to help nearby
+                            shops and restaurants anticipate customer traffic.
+                        </p>
+                        <a class="card-link" href="https://github.com/ialauper/pedestrian-flow" target="_blank" rel="noopener">
+                            GitHub →
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="card-media is-zoomable">
+                        <img class="card-image" src="../images/projects/hs26/mariamicioni-lake-geneva-temp.png" data-fallback-src="https://opengraph.githubassets.com/1/mariamicioni/lake-geneva-temp" alt="Project screenshot">
+                        <span class="card-zoom-badge" aria-hidden="true">⤢</span>
+                    </div>
+                    <div class="card-body">
+                        <h2 class="card-title">Lake Geneva Water Temperature Forecast</h2>
+                        <p class="card-author">Maria Micioni</p>
+                        <p class="card-summary">
+                            Predicts tomorrow's mean water temperature of Lake Geneva at the BAFU station in
+                            Geneva, issued every evening at 18:00. Meant for the swimmers and paddlers who use
+                            the lake all year round.
+                        </p>
+                        <a class="card-link" href="https://github.com/mariamicioni/lake-geneva-temp" target="_blank" rel="noopener">
+                            GitHub →
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="card-media is-zoomable">
+                        <img class="card-image" src="../images/projects/hs26/Zayden16-hslu-mlops-hs-26.png" data-fallback-src="https://opengraph.githubassets.com/1/Zayden16/hslu-mlops-hs-26" alt="Project screenshot">
+                        <span class="card-zoom-badge" aria-hidden="true">⤢</span>
+                    </div>
+                    <div class="card-body">
+                        <h2 class="card-title">skyjam — Forecasting GNSS Interference over European Airspace</h2>
+                        <p class="card-author">Yazdan Mehdi Musa</p>
+                        <p class="card-summary">
+                            Predicts, for every H3 airspace cell over Europe, the probability of GNSS jamming
+                            or spoofing six hours ahead, re-issued hourly. Labels come from the navigation-
+                            integrity values aircraft broadcast over ADS-B.
+                        </p>
+                        <a class="card-link" href="https://github.com/Zayden16/hslu-mlops-hs-26" target="_blank" rel="noopener">
+                            GitHub →
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="card-media is-zoomable">
+                        <img class="card-image" src="../images/projects/hs26/Christian-Skovgaard-setMaker.png" data-fallback-src="https://opengraph.githubassets.com/1/Christian-Skovgaard/setMaker" alt="Project screenshot">
+                        <span class="card-zoom-badge" aria-hidden="true">⤢</span>
+                    </div>
+                    <div class="card-body">
+                        <h2 class="card-title">setMaker — Irish Session Tune Set Recommender</h2>
+                        <p class="card-author">Christian Skovgaard Nielsen</p>
+                        <p class="card-summary">
+                            Recommends ten tunes that fit well into a set with a given Irish traditional tune,
+                            learned from historical set data on thesession.org. Evaluated by Recall@10 against
+                            a co-occurrence frequency baseline.
+                        </p>
+                        <a class="card-link" href="https://github.com/Christian-Skovgaard/setMaker" target="_blank" rel="noopener">
+                            GitHub →
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="card-media is-zoomable">
+                        <img class="card-image" src="../images/projects/hs26/D4rkMindz-hslu-winterload.png" data-fallback-src="https://opengraph.githubassets.com/1/D4rkMindz/hslu-winterload" alt="Project screenshot">
+                        <span class="card-zoom-badge" aria-hidden="true">⤢</span>
+                    </div>
+                    <div class="card-body">
+                        <h2 class="card-title">Day-Ahead Swiss Electricity Load Forecast</h2>
+                        <p class="card-author">Björn Pfoster</p>
+                        <p class="card-summary">
+                            Forecasts Switzerland's total hourly electricity load for all 24 hours of the next
+                            day, every morning at 08:00. Runs straight into the heating season, so the system
+                            has to cope with real, predictable data drift.
+                        </p>
+                        <a class="card-link" href="https://github.com/D4rkMindz/hslu-winterload" target="_blank" rel="noopener">
+                            GitHub →
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="card-media is-zoomable">
+                        <img class="card-image" src="../images/projects/hs26/AbsturzWindows-hn-breakout.png" data-fallback-src="https://opengraph.githubassets.com/1/AbsturzWindows/hn-breakout" alt="Project screenshot">
+                        <span class="card-zoom-badge" aria-hidden="true">⤢</span>
+                    </div>
+                    <div class="card-body">
+                        <h2 class="card-title">HN Breakout — Early Prediction of Hacker News Front Page Posts</h2>
+                        <p class="card-author">David Rivera Allegro</p>
+                        <p class="card-summary">
+                            Watches every new Hacker News story for its first 30 minutes and predicts whether
+                            it will reach 100 points within 24 hours. Benchmarked against a points-momentum baseline,
+                            with daily top-10 alerts for authors and readers.
+                        </p>
+                        <a class="card-link" href="https://github.com/AbsturzWindows/hn-breakout" target="_blank" rel="noopener">
+                            GitHub →
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="card-media is-zoomable">
+                        <img class="card-image" src="../images/projects/hs26/Noah-Rod-padel-predictor.svg" data-fallback-src="https://opengraph.githubassets.com/1/Noah-Rod/padel-predictor" alt="Project screenshot">
+                        <span class="card-zoom-badge" aria-hidden="true">⤢</span>
+                    </div>
+                    <div class="card-body">
+                        <h2 class="card-title">Padel Predictor — Pre-Match Win Probabilities for the Premier Padel Tour</h2>
+                        <p class="card-author">Noah Rodriguez</p>
+                        <p class="card-summary">
+                            Predicts the probability that one pair beats another for every scheduled main-draw
+                            match on the Premier Padel and FIP tours, refreshed every morning. The data
+                            provider's own Elo serves as the first champion model to beat.
+                        </p>
+                        <a class="card-link" href="https://github.com/Noah-Rod/padel-predictor" target="_blank" rel="noopener">
+                            GitHub →
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="card-media is-zoomable">
+                        <img class="card-image" src="../images/projects/hs26/Nex-cell-auroracast.png" data-fallback-src="https://opengraph.githubassets.com/1/Nex-cell/auroracast" alt="Project screenshot">
+                        <span class="card-zoom-badge" aria-hidden="true">⤢</span>
+                    </div>
+                    <div class="card-body">
+                        <h2 class="card-title">AuroraCast — 3-Hour-Ahead Kp Forecasting from Live Solar-Wind Data</h2>
+                        <p class="card-author">Sven Rudbøg</p>
+                        <p class="card-summary">
+                            Forecasts the planetary geomagnetic Kp index and the chance of a G1+ storm for the
+                            next three-hour interval from live NOAA solar-wind measurements. For aurora
+                            watchers, photographers and HF-radio users.
+                        </p>
+                        <a class="card-link" href="https://github.com/Nex-cell/auroracast" target="_blank" rel="noopener">
+                            GitHub →
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="card-media is-zoomable">
+                        <img class="card-image" src="../images/projects/hs26/0xff4b-gaeja.png" data-fallback-src="https://opengraph.githubassets.com/1/0xff4b/gaeja" alt="Project screenshot">
+                        <span class="card-zoom-badge" aria-hidden="true">⤢</span>
+                    </div>
+                    <div class="card-body">
+                        <h2 class="card-title">Predicting Pedestrian Flow — 60-Minute Urban Footfall Forecast</h2>
+                        <p class="card-author">Timo Schlumpf</p>
+                        <p class="card-summary">
+                            Forecasts the number of pedestrians at the Lintheschergasse counter in Zurich for
+                            the next hour. Tests whether upcoming public-transport activity, weather and
+                            calendar context beat a strong seasonal baseline.
+                        </p>
+                        <a class="card-link" href="https://github.com/0xff4b/gaeja" target="_blank" rel="noopener">
+                            GitHub →
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="card-media is-zoomable">
+                        <img class="card-image" src="../images/projects/hs26/SilasSchuler-Swiss-Control-Area-Balance-Forecast.png" data-fallback-src="https://opengraph.githubassets.com/1/SilasSchuler/Swiss-Control-Area-Balance-Forecast" alt="Project screenshot">
+                        <span class="card-zoom-badge" aria-hidden="true">⤢</span>
+                    </div>
+                    <div class="card-body">
+                        <h2 class="card-title">Swiss Control Area Balance Forecast</h2>
+                        <p class="card-author">Silas Schuler</p>
+                        <p class="card-summary">
+                            Forecasts the total system imbalance of the Swiss control area for the next 24
+                            hours at 15-minute resolution, from data Swissgrid publishes daily. Retrains every
+                            day and serves the latest forecast on a small dashboard.
+                        </p>
+                        <a class="card-link" href="https://github.com/SilasSchuler/Swiss-Control-Area-Balance-Forecast" target="_blank" rel="noopener">
+                            GitHub →
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="card-media is-zoomable">
+                        <img class="card-image" src="../images/projects/hs26/sky150-urban-canopy-forecast-zurich.png" data-fallback-src="https://opengraph.githubassets.com/1/sky150/urban-canopy-forecast-zurich" alt="Project screenshot">
+                        <span class="card-zoom-badge" aria-hidden="true">⤢</span>
+                    </div>
+                    <div class="card-body">
+                        <h2 class="card-title">Urban Canopy Change Forecast — Prioritizing Tree Replacement in Zurich</h2>
+                        <p class="card-author">Natalie Sumbo Filipe</p>
+                        <p class="card-summary">
+                            Estimates how crown-covered area changes in each 100 m cell of Zurich between
+                            LiDAR epochs. Turns the estimates into a prioritization map that shows where
+                            canopy loss is likely and replacement planting matters most.
+                        </p>
+                        <a class="card-link" href="https://github.com/sky150/urban-canopy-forecast-zurich" target="_blank" rel="noopener">
+                            GitHub →
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="card-media is-zoomable">
+                        <img class="card-image" src="../images/projects/hs26/WunderlinRaphael-FlowGuard.png" data-fallback-src="https://opengraph.githubassets.com/1/WunderlinRaphael/FlowGuard" alt="Project screenshot">
+                        <span class="card-zoom-badge" aria-hidden="true">⤢</span>
+                    </div>
+                    <div class="card-body">
+                        <h2 class="card-title">FlowGuard — 24-Hour River Level Forecast for Canton Uri</h2>
+                        <p class="card-author">Raphael Wunderlin</p>
+                        <p class="card-summary">
+                            Predicts water levels 24 hours ahead at six BAFU gauges along the Reuss and
+                            Schächen in canton Uri, treating them as one connected system. Each forecast maps
+                            to a drought, normal or flood-risk band on a dashboard.
+                        </p>
+                        <a class="card-link" href="https://github.com/WunderlinRaphael/FlowGuard" target="_blank" rel="noopener">
+                            GitHub →
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="card-media is-zoomable">
+                        <img class="card-image" src="../images/projects/hs26/Deeliodas-MLOPS.png" data-fallback-src="https://opengraph.githubassets.com/1/Deeliodas/MLOPS" alt="Project screenshot">
+                        <span class="card-zoom-badge" aria-hidden="true">⤢</span>
+                    </div>
+                    <div class="card-body">
+                        <h2 class="card-title">Zurich Footfall Forecast — Bahnhofstrasse Mitte</h2>
+                        <p class="card-author">Simon Zeller</p>
+                        <p class="card-summary">
+                            Predicts hourly pedestrian counts at Bahnhofstrasse Mitte in Zurich for the
+                            following day from continuously updated sensor data. Measured against a seasonal-
+                            naive baseline that repeats last week's count.
+                        </p>
+                        <a class="card-link" href="https://github.com/Deeliodas/MLOPS" target="_blank" rel="noopener">
+                            GitHub →
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="footer"></div>
+    <script src="../js/main.js"></script>
+</body>
+</html>
